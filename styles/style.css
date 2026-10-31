@@ -12,6 +12,7 @@
     box-sizing: border-box;
     color: #111111;
     font-family: 'Pirata One', serif;
+    font-size: 18px;
 }
 
 body {
@@ -49,7 +50,7 @@ body {
 
 .title-box {
     width: 100%;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: normal;
     padding: 15px 30px;
     background: #ffffff;
