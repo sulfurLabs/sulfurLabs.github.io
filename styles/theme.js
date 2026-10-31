@@ -5,7 +5,7 @@ function changeTheme()
     {
         document.documentElement.setAttribute("data-theme", "light");
         document.getElementById("themeButton").innerHTML = "dm";
-    } else if (document.documentElement.getAttribute("data-theme") == "light") //if light, turn dark
+    } else //if light, turn dark
     {
         document.documentElement.setAttribute("data-theme", "dark");
         document.getElementById("themeButton").innerHTML = "lm";
