@@ -1,7 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
 
+/*just thought this gradient looked cool*/
+[gradient="pruple-green"] {
+    --selection0001: #45f299;
+    --selection0002: #45e299;
+    --selection0003: #45d299;
+    --selection0004: #45c299;
+    --selection0005: #45b299;
+    --selection0006: #45a299;
+    --selection0007: #459299;
+    --selection0008: #458299;
+    --selection0009: #457299;
+    --selection0010: #456299;
+    --selection0011: #455299;
+    --selection0012: #454299;
+    --selection0013: #453299;
+    --selection0014: #452299;
+    --selection0015: #451299;
+}
+:root {
+    color-scheme: light;
+    --color-bg: #f5f5f5;
+    --color-bg-dots: #999999;
+    --color-border: #111111;
+    --color-border-invert: #eeeeee;
+    --color-main: #ffffff;
+    --color-main-txt: #000000;
+    /*--color-title-box: #444950;*/
+    --color-title-box: #151515;
+    --color-title-box-txt: #ffffff;
+}
+
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    --color-bg: #151515;
+    --color-bg-dots: #444444;
+    --color-border: #eeeeee;
+    --color-border-invert: #111111;
+    --color-main: #222222;
+    --color-main-txt: #eeeeee;
+    /*--color-title-box: #444950;*/
+    --color-title-box: #eeeeee;
+    --color-title-box-txt: #151515;
+}
+
 ::selection {
-    background: #55db;
+    background: #456299;
     color: #ffffff;
 }
 
@@ -10,14 +55,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #111111;
+    color: var(--color-main-txt);
     font-family: 'Pirata One', serif;
-    font-size: 18px;
 }
 
 body {
-    background-color: #f5f5f5;
-    background-image: radial-gradient(#999999 1px, transparent 1px);
+    background-color: var(--color-bg);
+    background-image: radial-gradient(var(--color-bg-dots) 1px, transparent 1px);
     background-size: 40px 40px;
 }
 
@@ -36,32 +80,74 @@ body {
 }
 
 .main-container {
+    /*font-size: 18px;*/
     width: 800px;
     margin: 40px auto;
-    background: #ffffff;
-    border: 1px solid #111111;
+    background: var(--color-main);
+    color: var(--color-main-txt);
+    border: 1px solid var(--color-border);
     border-radius: 0;
 }
 
 /* text content*/
 .main2-container {
+    background: var(--color-main);
+    color: var(--color-main-txt);
     padding: 30px;
 }
 
-.title-box {
+.button-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+    width: max-content;
+}
+
+.button1 {
+    display: inline-block;
+
+    margin: 5px 0px 5px -5px;
+    padding: 6px 16px;
+
+    background: var(--color-main);
+    color: var(--color-main-txt);
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    font-size: 18px;
+
+    box-shadow:
+        5px 5px 0 1px var(--color-border), /* inner*/
+        5px 5px 0 2px var(--color-border);
+    transition:
+        background-color 150ms ease,
+        color 150ms ease,
+        box-shadow 150ms ease;
+}
+
+.button1:hover {
+    background: #111111;
+    color: #ffffff;
+
+    box-shadow:
+        5px 5px 0 1px var(--color-border-invert), /*inner*/
+        5px 5px 0 2px var(--color-border);
+}
+
+header.title-box {
     width: 100%;
     font-size: 40px;
     font-weight: normal;
     padding: 15px 30px;
-    background: #ffffff;
-    color: #111111;
-    border-bottom: 1px solid #111111;
+    background: var(--color-title-box);
+    color: var(--color-title-box-txt);
+    border-bottom: 1px solid var(--color-border);
     transition: background-color 150ms ease,  color 150ms ease;
 }
 
-.title-box:hover {
-    background: #111111;
-    color: #ffffff;
+header.title-box:hover {
+    /*background: #111111;
+    color: #ffffff;*/
 }
 
 .desktop-screenshot img {
